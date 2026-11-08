@@ -3,7 +3,9 @@
  * "Performance Assessment for School Leaders (PASL) Candidate and Educator
  * Handbook", Updated July 2025 (the edition supplied by the candidate).
  * Every `page` value is that edition's printed page number. A page written as
- * "2026:<n>" cites a stricter rule ETS added in the July 2026 edition.
+ * "2026:<n>" cites a rule that first appears in the July 2026 edition, which
+ * ETS publishes as its current handbook (linked from ets.org/pasl; cover reads
+ * "Updated July 2026"). The ETS PASL FAQ (July 2026) repeats those rules.
  *
  * Anything with kind "suggested" is a planning recommendation from this app,
  * not an ETS requirement. Guiding prompts and rubric criteria are NOT in the
@@ -88,7 +90,7 @@ export const ARTIFACTS: Artifact[] = [
     task: "t1",
     name: "Longitudinal data",
     description:
-      "The same type of information on the same subject observed at multiple points in time, showing the problem you identified. ETS's July 2026 handbook adds that every data point must be dated and no older than five years.",
+      "The same type of information on the same subject observed at multiple points in time, showing the problem you identified. ETS's July 2026 handbook adds that the data's date must be visible and every data point no older than five years before the administration window you submit in.",
     pages: "1 page",
     page: "6, 21",
     permission: PERMISSION_NONE,
@@ -304,7 +306,7 @@ const finalChecks = (task: TaskId, limit: number, pageMax: number): ChecklistIte
     id: `${task}-final-data-age`,
     kind: "official",
     page: "2026:20–21",
-    text: "Any data is dated and no older than five years before the submission window (newer ETS rule)",
+    text: "Any data shows its date and is no older than five years before your administration window (added in the July 2026 handbook)",
   },
   {
     id: `${task}-final-permissions`,
@@ -349,8 +351,8 @@ export const TASKS: PaslTask[] = [
         page: "21",
       },
       {
-        title: "Newer ETS rule: data within five years",
-        text: "ETS's July 2026 handbook adds that any data artifact must be dated and no older than five years before your submission window, or it may be unscorable.",
+        title: "Added in the July 2026 handbook: data within five years",
+        text: "Any data submitted as an artifact must be no older than five years prior to the administration window in which you submit, with its date visible. Older data may make that artifact unscorable.",
         page: "2026:20–21",
       },
     ],
@@ -461,8 +463,8 @@ export const TASKS: PaslTask[] = [
         page: "22",
       },
       {
-        title: "Newer ETS rule: people on camera",
-        text: "ETS's July 2026 handbook adds that each segment needs at least two participants, and the 10-minute reflection must include at least one colleague, or the step scores zero.",
+        title: "Added in the July 2026 handbook: people on camera",
+        text: "At least two participants must be present in each video segment, and the 10-minute Step 4 reflection must include at least one colleague engaged in the discussion. Otherwise the step scores zero.",
         page: "2026:23, 32",
       },
     ],
@@ -474,21 +476,21 @@ export const TASKS: PaslTask[] = [
           { id: "t3-read-directions", kind: "official", page: "14–15", text: "Read the full Task 3 directions and rubric (from the ETS PASL website)" },
           { id: "t3-team-formed", kind: "suggested", text: "Invite colleagues to form the collaborative team and agree on meeting times" },
           { id: "t3-forms-before", kind: "official", page: "24", text: "Signed PASL Colleagues/Adult Permission Forms collected from everyone who'll be seen or heard, before recording" },
-          { id: "t3-equipment", kind: "official", page: "24–25", text: "Video equipment checked: camera or phone, tripod, a microphone near the group" },
+          { id: "t3-equipment", kind: "official", page: "24–25", text: "Video equipment checked and adequate before recording", detail: "The handbook suggests considering a camera or phone, a tripod, an external microphone near the group, and an extension cord." },
         ],
       },
       {
         id: "t3-video",
         title: "Video",
         items: [
-          { id: "t3-practice", kind: "official", page: "26", text: "Practice by recording at least two different sessions" },
+          { id: "t3-practice", kind: "suggested", text: "Practice by recording at least two different sessions", detail: "The handbook recommends this to get the most from practice (p. 26). Each final segment must still be continuous and unedited." },
           { id: "t3-seg5", kind: "official", page: "10, 26", text: "5-minute continuous segment recorded: planning (3.2.2) or implementation (3.3.1)" },
           { id: "t3-seg10", kind: "official", page: "10, 26", text: "10-minute continuous segment recorded: self-reflection/feedback (3.4.1)" },
-          { id: "t3-participants", kind: "official", page: "2026:23, 32", text: "Each segment shows at least two participants, and the reflection includes at least one colleague (newer ETS rule)" },
+          { id: "t3-participants", kind: "official", page: "2026:23, 32", text: "Each segment shows at least two participants, and the reflection includes at least one colleague (added in the July 2026 handbook)" },
           { id: "t3-noedit", kind: "official", page: "23, 28", text: "Both segments unedited: no cuts, fades, blurring, added audio or second camera" },
           { id: "t3-combined", kind: "official", page: "28–29", text: "Segments combined into one file that meets the upload size limits" },
           { id: "t3-timestamps", kind: "suggested", text: "Note time stamps of key moments to cite in your commentary", detail: "The handbook recommends time stamps such as “at 2:12 minutes” (p. 21)." },
-          { id: "t3-upload", kind: "official", page: "28–29", text: "Uploaded in Step 5 (allow at least an hour) and played back to check sound and picture" },
+          { id: "t3-upload", kind: "official", page: "28–29", text: "Uploaded in Step 5 and played back to check sound and picture", detail: "ETS recommends allowing at least an hour for the upload and review (p. 29)." },
         ],
       },
       {

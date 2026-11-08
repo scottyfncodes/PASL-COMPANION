@@ -103,7 +103,7 @@ export default function EvidencePage() {
           <li>Use only the official PASL permission forms from the{" "}
             <a href={HANDBOOK.website} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">ETS PASL website</a>.
             Keep the signed forms yourself; don&rsquo;t send them to ETS. <PageRef page="24, 36" /></li>
-          <li>Newer ETS rule: data must be dated and no older than five years before your submission window. <PageRef page="2026:20–21" /></li>
+          <li>Added in the July 2026 handbook: data must show its date and be no older than five years before your administration window. <PageRef page="2026:20–21" /></li>
         </ul>
       </div>
 
