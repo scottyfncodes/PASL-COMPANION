@@ -1,8 +1,9 @@
 /**
  * Official PASL requirements, transcribed from the ETS
  * "Performance Assessment for School Leaders (PASL) Candidate and Educator
- * Handbook", Updated July 2026 (the edition ETS currently publishes).
- * Every `page` value is the handbook's printed page number.
+ * Handbook", Updated July 2025 (the edition supplied by the candidate).
+ * Every `page` value is that edition's printed page number. A page written as
+ * "2026:<n>" cites a stricter rule ETS added in the July 2026 edition.
  *
  * Anything with kind "suggested" is a planning recommendation from this app,
  * not an ETS requirement. Guiding prompts and rubric criteria are NOT in the
@@ -11,8 +12,10 @@
 
 export const HANDBOOK = {
   title: "PASL Candidate and Educator Handbook",
-  edition: "Updated July 2026",
-  url: "https://www.ets.org/pdfs/pasl/pasl-candidate-educator-handbook.pdf",
+  edition: "Updated July 2025",
+  /** ETS now hosts only the July 2026 edition at this address. */
+  newerEdition: "July 2026",
+  newerUrl: "https://www.ets.org/pdfs/pasl/pasl-candidate-educator-handbook.pdf",
   website: "https://www.ets.org/pasl.html",
 };
 
@@ -69,7 +72,7 @@ export interface PaslTask {
   checklist: ChecklistGroup[];
 }
 
-const IDENTIFIERS_PAGE = "17";
+const IDENTIFIERS_PAGE = "18";
 
 const PERMISSION_STUDENT =
   "Signed PASL Student Permission Form for each student whose work is submitted (forms for students under and over 18). Black out names on the artifact itself. Keep forms yourself; don't send them to ETS.";
@@ -85,9 +88,9 @@ export const ARTIFACTS: Artifact[] = [
     task: "t1",
     name: "Longitudinal data",
     description:
-      "The same type of information on the same subject observed at multiple points in time, showing the problem you identified. Dates must be visible; all data points no older than five years.",
+      "The same type of information on the same subject observed at multiple points in time, showing the problem you identified. ETS's July 2026 handbook adds that every data point must be dated and no older than five years.",
     pages: "1 page",
-    page: "6, 20",
+    page: "6, 21",
     permission: PERMISSION_NONE,
   },
   {
@@ -189,7 +192,7 @@ export const ARTIFACTS: Artifact[] = [
     description:
       "A page from a walk-through observation form completed for one teacher during a lesson related to the PD topic. ETS offers a sample form; your own is fine if it stays focused on the PD.",
     pages: "1 page",
-    page: "8, 20",
+    page: "8, 21",
     permission: PERMISSION_ADULT_IF,
   },
   {
@@ -208,7 +211,7 @@ export const ARTIFACTS: Artifact[] = [
     description:
       "A page from a feedback survey completed after the professional development. ETS offers a sample survey, or design your own.",
     pages: "1 page",
-    page: "8, 20",
+    page: "8, 21",
     permission: PERMISSION_ADULT_IF,
   },
   // Task 3, handbook pp. 9–10
@@ -262,9 +265,9 @@ export const ARTIFACTS: Artifact[] = [
     task: "t3",
     name: "15-minute video",
     description:
-      "One video file with one continuous, unedited 5-minute segment (planning, textbox 3.2.2, or implementation, textbox 3.3.1) and one continuous, unedited 10-minute segment (reflection with at least one colleague, textbox 3.4.1).",
+      "One video file with one continuous, unedited 5-minute segment (planning, textbox 3.2.2, or implementation, textbox 3.3.1) and one continuous, unedited 10-minute segment (self-reflection/feedback, textbox 3.4.1).",
     pages: "Video, not counted in pages",
-    page: "10, 22–28",
+    page: "10, 23–29",
     permission:
       "Signed PASL Colleagues/Adult Permission Form for every adult seen or heard, collected BEFORE you record. District or school forms are not accepted.",
     isVideo: true,
@@ -272,7 +275,7 @@ export const ARTIFACTS: Artifact[] = [
 ];
 
 const finalChecks = (task: TaskId, limit: number, pageMax: number): ChecklistItem[] => [
-  { id: `${task}-final-prompts`, kind: "official", page: "14", text: "Every part of every guiding prompt is addressed" },
+  { id: `${task}-final-prompts`, kind: "official", page: "15", text: "Every part of every guiding prompt is addressed" },
   {
     id: `${task}-final-limit`,
     kind: "official",
@@ -282,13 +285,13 @@ const finalChecks = (task: TaskId, limit: number, pageMax: number): ChecklistIte
   {
     id: `${task}-final-pages`,
     kind: "official",
-    page: "19, 21",
+    page: "20, 22",
     text: `Artifacts total ${pageMax} pages or fewer and each is readable, not blurry`,
   },
   {
     id: `${task}-final-links`,
     kind: "official",
-    page: "21",
+    page: "22",
     text: "Each required artifact is linked once, in the right textbox, with no extra artifacts and no third-party links",
   },
   {
@@ -300,21 +303,21 @@ const finalChecks = (task: TaskId, limit: number, pageMax: number): ChecklistIte
   {
     id: `${task}-final-data-age`,
     kind: "official",
-    page: "20–21",
-    text: "Any data is dated and no older than five years before the submission window",
+    page: "2026:20–21",
+    text: "Any data is dated and no older than five years before the submission window (newer ETS rule)",
   },
   {
     id: `${task}-final-permissions`,
     kind: "official",
-    page: "24, 35",
+    page: "24, 36",
     text: "Signed PASL permission forms are kept on file for everyone whose work or image is included",
   },
-  { id: `${task}-final-copy`, kind: "official", page: "14", text: "A copy of all final documents is saved" },
+  { id: `${task}-final-copy`, kind: "official", page: "15", text: "A copy of all final documents is saved" },
   {
     id: `${task}-final-peer`,
     kind: "suggested",
     text: "A trusted colleague has read the response against the rubric",
-    detail: "The handbook recommends this (p. 16–17). Choose someone who won't fill in gaps from knowing your school.",
+    detail: "The handbook recommends this (p. 17–18). Choose someone who won't fill in gaps from knowing your school.",
   },
 ];
 
@@ -334,7 +337,7 @@ export const TASKS: PaslTask[] = [
     artifactPageMax: 8,
     page: "6–7",
     steps: [
-      { n: 1, title: "Identifying a Problem/Challenge", gloss: "Name a significant problem in your school, supported by longitudinal data.", page: "7, 20" },
+      { n: 1, title: "Identifying a Problem/Challenge", gloss: "Name a significant problem in your school, supported by longitudinal data.", page: "7, 21" },
       { n: 2, title: "Researching and Developing a Plan", gloss: "Use research to build a plan to address it.", page: "7" },
       { n: 3, title: "Implementing the Plan", gloss: "Carry out the plan and note any adjustments you make.", page: "7" },
       { n: 4, title: "Reflecting on the Plan and the Resolution", gloss: "Look back on what worked and what you'd do next time.", page: "7" },
@@ -342,8 +345,13 @@ export const TASKS: PaslTask[] = [
     special: [
       {
         title: "Longitudinal data is required",
-        text: "Your data must show the same kind of information at multiple points in time, and every data point must be within five years of your submission window.",
-        page: "20",
+        text: "Your data must show the same kind of information on the same subject at multiple points in time, and your commentary describes those data points and why they're appropriate.",
+        page: "21",
+      },
+      {
+        title: "Newer ETS rule: data within five years",
+        text: "ETS's July 2026 handbook adds that any data artifact must be dated and no older than five years before your submission window, or it may be unscorable.",
+        page: "2026:20–21",
       },
     ],
     checklist: [
@@ -351,7 +359,7 @@ export const TASKS: PaslTask[] = [
         id: "t1-prepare",
         title: "Get ready",
         items: [
-          { id: "t1-read-directions", kind: "official", page: "13–14", text: "Read the full Task 1 directions and rubric (from the ETS PASL website)" },
+          { id: "t1-read-directions", kind: "official", page: "14–15", text: "Read the full Task 1 directions and rubric (from the ETS PASL website)" },
           { id: "t1-choose-problem", kind: "suggested", text: "Choose a significant problem that affects instruction and student learning" },
           { id: "t1-find-data", kind: "suggested", text: "Confirm you can get longitudinal data (multiple dated points, within five years)" },
         ],
@@ -401,8 +409,8 @@ export const TASKS: PaslTask[] = [
         id: "t2-prepare",
         title: "Get ready",
         items: [
-          { id: "t2-read-directions", kind: "official", page: "13–14", text: "Read the full Task 2 directions and rubric (from the ETS PASL website)" },
-          { id: "t2-ancillary", kind: "suggested", text: "Download the optional Plan Template, Walk-Through Observation Form and Feedback Survey", detail: "Ancillary materials on the PASL website (p. 34–35). Using them is optional." },
+          { id: "t2-read-directions", kind: "official", page: "14–15", text: "Read the full Task 2 directions and rubric (from the ETS PASL website)" },
+          { id: "t2-ancillary", kind: "suggested", text: "Download the optional Plan Template, Walk-Through Observation Form and Feedback Survey", detail: "Ancillary materials on the PASL website (p. 35–36). Using them is optional." },
           { id: "t2-participants", kind: "official", page: "8", text: "Identify three participants with different levels of experience" },
           { id: "t2-schedule", kind: "suggested", text: "Schedule the PD and the follow-up observations with enough time between them to see an impact" },
         ],
@@ -438,19 +446,24 @@ export const TASKS: PaslTask[] = [
       { n: 1, title: "Identifying the Collaborative Team", gloss: "Form the team and describe its members (without names).", page: "10" },
       { n: 2, title: "Developing a Plan to Improve Instruction, Student Learning, and the School Culture", gloss: "Plan with the team. The 5-minute video may come from this planning (textbox 3.2.2).", page: "10" },
       { n: 3, title: "Implementing the Plan to Improve Instruction, Student Learning, and the School Culture", gloss: "Carry out the plan. Or the 5-minute video may come from implementation (textbox 3.3.1).", page: "10" },
-      { n: 4, title: "Reflecting on the Collaborative Team and the School Culture", gloss: "Reflect with at least one colleague. This is the 10-minute video (textbox 3.4.1).", page: "10, 23" },
+      { n: 4, title: "Reflecting on the Collaborative Team and the School Culture", gloss: "Reflect on the collaborative team and culture. The 10-minute video focuses on this self-reflection and feedback (textbox 3.4.1).", page: "10" },
       { n: 5, title: "Uploading the Video", gloss: "Upload the single 15-minute video file here, not to the Library of Artifacts.", page: "10, 28" },
     ],
     special: [
       {
         title: "Video continuity: an edited segment scores zero for all of Task 3",
         text: "Submit one 15-minute file: one continuous, unedited 5-minute segment and one continuous, unedited 10-minute segment. No cuts, fades, added footage or outside audio, no blurring faces or name tags, and no second camera. Joining the two segments into one file is allowed.",
-        page: "22, 27",
+        page: "23, 28",
       },
       {
-        title: "People on camera",
-        text: "At least two participants must be present in each segment, and the 10-minute reflection must include at least one colleague. The video must not be in a foreign language.",
-        page: "21, 23, 32",
+        title: "Language",
+        text: "Video segments must not be in a foreign language, even with a translated transcript.",
+        page: "22",
+      },
+      {
+        title: "Newer ETS rule: people on camera",
+        text: "ETS's July 2026 handbook adds that each segment needs at least two participants, and the 10-minute reflection must include at least one colleague, or the step scores zero.",
+        page: "2026:23, 32",
       },
     ],
     checklist: [
@@ -458,23 +471,24 @@ export const TASKS: PaslTask[] = [
         id: "t3-prepare",
         title: "Get ready",
         items: [
-          { id: "t3-read-directions", kind: "official", page: "13–14", text: "Read the full Task 3 directions and rubric (from the ETS PASL website)" },
+          { id: "t3-read-directions", kind: "official", page: "14–15", text: "Read the full Task 3 directions and rubric (from the ETS PASL website)" },
           { id: "t3-team-formed", kind: "suggested", text: "Invite colleagues to form the collaborative team and agree on meeting times" },
-          { id: "t3-forms-before", kind: "official", page: "23–24", text: "Signed PASL Colleagues/Adult Permission Forms collected from everyone who'll be seen or heard, before recording" },
-          { id: "t3-equipment", kind: "official", page: "23–25", text: "Video equipment checked: camera or phone, tripod, a microphone near the group" },
+          { id: "t3-forms-before", kind: "official", page: "24", text: "Signed PASL Colleagues/Adult Permission Forms collected from everyone who'll be seen or heard, before recording" },
+          { id: "t3-equipment", kind: "official", page: "24–25", text: "Video equipment checked: camera or phone, tripod, a microphone near the group" },
         ],
       },
       {
         id: "t3-video",
         title: "Video",
         items: [
-          { id: "t3-practice", kind: "official", page: "25", text: "Practice by recording at least two different sessions" },
+          { id: "t3-practice", kind: "official", page: "26", text: "Practice by recording at least two different sessions" },
           { id: "t3-seg5", kind: "official", page: "10, 26", text: "5-minute continuous segment recorded: planning (3.2.2) or implementation (3.3.1)" },
-          { id: "t3-seg10", kind: "official", page: "10, 23, 26", text: "10-minute continuous segment recorded: reflection with at least one colleague (3.4.1)" },
-          { id: "t3-noedit", kind: "official", page: "22, 27", text: "Both segments unedited: no cuts, fades, blurring, added audio or second camera" },
-          { id: "t3-combined", kind: "official", page: "27–28", text: "Segments combined into one file that meets the upload size limits" },
-          { id: "t3-timestamps", kind: "suggested", text: "Note time stamps of key moments to cite in your commentary", detail: "The handbook recommends time stamps such as “at 2:12 minutes” (p. 19)." },
-          { id: "t3-upload", kind: "official", page: "28", text: "Uploaded in Step 5 (allow at least an hour) and played back to check sound and picture" },
+          { id: "t3-seg10", kind: "official", page: "10, 26", text: "10-minute continuous segment recorded: self-reflection/feedback (3.4.1)" },
+          { id: "t3-participants", kind: "official", page: "2026:23, 32", text: "Each segment shows at least two participants, and the reflection includes at least one colleague (newer ETS rule)" },
+          { id: "t3-noedit", kind: "official", page: "23, 28", text: "Both segments unedited: no cuts, fades, blurring, added audio or second camera" },
+          { id: "t3-combined", kind: "official", page: "28–29", text: "Segments combined into one file that meets the upload size limits" },
+          { id: "t3-timestamps", kind: "suggested", text: "Note time stamps of key moments to cite in your commentary", detail: "The handbook recommends time stamps such as “at 2:12 minutes” (p. 21)." },
+          { id: "t3-upload", kind: "official", page: "28–29", text: "Uploaded in Step 5 (allow at least an hour) and played back to check sound and picture" },
         ],
       },
       {
@@ -498,6 +512,14 @@ export const ETHICS_POINTS: { text: string; page: string }[] = [
   { text: "Your commentary, artifacts and video must be your own work.", page: "11" },
   { text: "Mentors and instructors shouldn't make choices for you, correct your responses or score them with the PASL rubrics.", page: "11" },
   { text: "Text copied from other responses, the Library of Examples, or uncredited sources can cancel your scores.", page: "12" },
-  { text: "Never name teachers, colleagues, students, schools, districts or your town. Use “Colleague 1” and “my school”.", page: "17" },
-  { text: "Use only the official PASL permission forms. Keep them yourself; don't send them to ETS.", page: "5, 24, 35" },
+  { text: "ETS software scans every response for overlap with other submissions and the Library of Examples.", page: "13" },
+  { text: "Never name teachers, colleagues, students, schools, districts or your town. Use “Colleague 1” and “my school”.", page: "18" },
+  { text: "Use only the official PASL permission forms. Keep them yourself; don't send them to ETS.", page: "5, 24, 36" },
 ];
+
+/** "2026:20–21" → newer-edition reference; anything else is a July 2025 page. */
+export function parseRef(page: string): { newer: boolean; pages: string; label: string } {
+  const newer = page.startsWith("2026:");
+  const pages = newer ? page.slice(5) : page;
+  return { newer, pages, label: newer ? `July 2026 handbook p. ${pages}` : `Handbook p. ${pages}` };
+}

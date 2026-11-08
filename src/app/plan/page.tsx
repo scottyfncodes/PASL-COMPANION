@@ -91,7 +91,7 @@ export default function PlanPage() {
       <Card className="mb-8">
         <label htmlFor="deadline" className="font-semibold">Your submission deadline</label>
         <p className="mt-1 text-sm text-ink-soft">
-          Enter the date from ETS or your program. This app never sets official ETS dates. The handbook suggests working backward from your deadline. <PageRef page="13" />
+          Enter the date from ETS or your program. This app never sets official ETS dates. The handbook suggests working backward from your deadline. <PageRef page="14" />
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <input
@@ -138,7 +138,7 @@ export default function PlanPage() {
       </div>
 
       <p className="mt-8 text-sm text-ink-faint">
-        Milestones are suggestions, not ETS requirements. Resubmission windows and fees are set by ETS (<PageRef page="32" />). Your plan is saved only on this device.{" "}
+        Milestones are suggestions, not ETS requirements. Resubmission windows and fees are set by ETS (<PageRef page="33" />). Your plan is saved only on this device.{" "}
         <Link href="/about" className="text-sage-700 underline underline-offset-2">Back up your progress</Link>.
       </p>
     </div>

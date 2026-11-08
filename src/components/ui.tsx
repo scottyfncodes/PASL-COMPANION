@@ -1,20 +1,23 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { HANDBOOK, type Kind } from "@/lib/pasl";
+import { HANDBOOK, parseRef, type Kind } from "@/lib/pasl";
 
 export function PageRef({ page }: { page?: string }) {
   if (!page) return null;
-  const multi = /[,–-]/.test(page);
+  const ref = parseRef(page);
+  if (!ref.newer) {
+    return <span className="whitespace-nowrap text-ink-faint">{ref.label}</span>;
+  }
   return (
     <a
-      href={`${HANDBOOK.url}#page=${parseInt(page, 10)}`}
+      href={`${HANDBOOK.newerUrl}#page=${parseInt(ref.pages, 10)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="whitespace-nowrap text-ink-faint underline decoration-line underline-offset-2 hover:text-sage-700"
-      aria-label={`Handbook page${multi ? "s" : ""} ${page} (opens the ETS PDF)`}
+      className="whitespace-nowrap text-amber-ink underline decoration-amber-ink/30 underline-offset-2"
+      aria-label={`${ref.label} (opens the ETS PDF)`}
     >
-      Handbook p. {page}
+      {ref.label}
     </a>
   );
 }
