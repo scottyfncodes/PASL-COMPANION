@@ -96,11 +96,18 @@ export default function AboutPage() {
           Official requirements cite your copy of the {HANDBOOK.title} ({HANDBOOK.edition}). &ldquo;Handbook p.&rdquo; numbers are that edition&rsquo;s printed pages.
         </p>
         <p className="mt-3 text-ink-soft">
-          ETS has since published a{" "}
-          <a href={HANDBOOK.newerUrl} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">{HANDBOOK.newerEdition} edition</a>.
-          The task requirements are the same, but it adds three stricter rules, which this app marks as &ldquo;newer ETS rule&rdquo;:
-          data no older than five years, at least two participants in each video segment, and at least one colleague in the 10-minute reflection.
-          Check which edition applies to your submission window. If they differ, the official ETS version wins.
+          The handbook ETS currently links from its{" "}
+          <a href={HANDBOOK.website} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">PASL website</a> is the{" "}
+          <a href={HANDBOOK.newerUrl} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">{HANDBOOK.newerEdition} edition</a>{" "}
+          (its cover reads &ldquo;Updated July 2026&rdquo;). Its task requirements match July 2025, but it adds three rules, marked in this app as &ldquo;added in the July 2026 handbook&rdquo;:
+        </p>
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-soft">
+          <li>Data artifacts no older than five years before your administration window <PageRef page="2026:20–21" /></li>
+          <li>At least two participants in each video segment <PageRef page="2026:32" /></li>
+          <li>At least one colleague in the 10-minute reflection, or that step scores zero <PageRef page="2026:23" /></li>
+        </ul>
+        <p className="mt-3 text-ink-soft">
+          The ETS PASL FAQ for test takers repeats the five-year and colleague rules. Confirm which requirements apply to your submission window with ETS or your program. Where this app and ETS differ, ETS wins.
         </p>
         <p className="mt-3 font-medium">Get these separately from the <a href={HANDBOOK.website} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">ETS PASL website</a>:</p>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-soft">
