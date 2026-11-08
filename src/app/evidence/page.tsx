@@ -99,11 +99,11 @@ export default function EvidencePage() {
         <p className="font-semibold">Keep it private</p>
         <ul className="space-y-2 text-ink-soft">
           <li>This app doesn&rsquo;t store files. Never type student information, school names or confidential records here.</li>
-          <li>On submitted artifacts, cross out names of teachers, students, schools, districts and your town. Use &ldquo;Colleague 1&rdquo; and &ldquo;my school&rdquo;. <PageRef page="17" /></li>
+          <li>On submitted artifacts, cross out names of teachers, students, schools, districts and your town. Use &ldquo;Colleague 1&rdquo; and &ldquo;my school&rdquo;. <PageRef page="18" /></li>
           <li>Use only the official PASL permission forms from the{" "}
             <a href={HANDBOOK.website} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">ETS PASL website</a>.
-            Keep the signed forms yourself; don&rsquo;t send them to ETS. <PageRef page="24, 35" /></li>
-          <li>Data must be dated and no older than five years before your submission window. <PageRef page="20" /></li>
+            Keep the signed forms yourself; don&rsquo;t send them to ETS. <PageRef page="24, 36" /></li>
+          <li>Newer ETS rule: data must be dated and no older than five years before your submission window. <PageRef page="2026:20–21" /></li>
         </ul>
       </div>
 

@@ -12,7 +12,7 @@ Independent tool, not affiliated with ETS. It does not write, score or submit re
 - **About & backup**: JSON export/import, local-storage notice, ethics, sources.
 
 ## Source of requirements
-Official requirements live in `src/lib/pasl.ts` and cite the *PASL Candidate and Educator Handbook, Updated July 2026* (current ETS edition) by printed page. Items are tagged `official` (from the handbook) or `suggested` (planning tips). Guiding prompts and rubric criteria are not in the handbook and are not reproduced.
+Official requirements live in `src/lib/pasl.ts` and cite the *PASL Candidate and Educator Handbook, Updated July 2025* (the candidate's copy) by printed page. Three stricter rules from the July 2026 edition are kept and labelled as newer ETS rules (page refs written `2026:<n>`). Items are tagged `official` (from the handbook) or `suggested` (planning tips). Guiding prompts and rubric criteria are not in the handbook and are not reproduced.
 
 ## Data
 No backend, login, database or AI calls. Progress lives in `localStorage` (`pasl-companion:v1`) on one device; use the backup file to move it.

@@ -40,7 +40,7 @@ export function firstSteps(s: AppState): FirstStep[] {
       ? {
           id: "start-deadline",
           kind: "official",
-          page: "13",
+          page: "14",
           href: "/plan",
           text: "Double-check your submission deadline against the official ETS submission window",
           detail: "This app never sets ETS dates. Confirm yours on the PASL website or with your program.",
@@ -48,7 +48,7 @@ export function firstSteps(s: AppState): FirstStep[] {
       : {
           id: "start-deadline",
           kind: "official",
-          page: "13",
+          page: "14",
           href: "/plan",
           text: "Confirm your submission deadline and add it to My Plan",
           detail: "The handbook suggests working backward from your deadline. Find your submission window on the PASL website or ask your program.",
@@ -58,7 +58,7 @@ export function firstSteps(s: AppState): FirstStep[] {
     steps.push({
       id: "start-directions",
       kind: "official",
-      page: "6, 13",
+      page: "6, 14",
       href: "/tasks",
       text: "Get the official task directions and rubrics for Tasks 1, 2 and 3",
       detail: "They're on the ETS PASL website. The guiding prompts and rubric criteria aren't in the handbook or in this app.",
@@ -68,7 +68,7 @@ export function firstSteps(s: AppState): FirstStep[] {
     {
       id: "start-forms",
       kind: "official",
-      page: "5, 24, 35",
+      page: "5, 24, 36",
       href: "/evidence",
       text: "Download the official PASL permission forms (students under 18, over 18, and colleagues/adults)",
       detail: "District or school forms aren't accepted. You keep the signed forms; you don't send them to ETS.",
@@ -76,7 +76,7 @@ export function firstSteps(s: AppState): FirstStep[] {
     {
       id: "start-account",
       kind: "official",
-      page: "13",
+      page: "14",
       href: "/tasks",
       text: "Create your account in the ETS registration system",
       detail: "You build and submit all three tasks from that account.",
@@ -125,7 +125,7 @@ export interface MilestoneDef {
 export const MILESTONES: MilestoneDef[] = [
   { id: "m-materials", title: "Get directions, rubrics and permission forms", why: "Everything else depends on the official materials.", weeksBefore: 22, href: "/tasks" },
   { id: "m-activities", title: "Choose the leadership activity for each task", why: "Pick projects you can lead and finish in time.", weeksBefore: 20, href: "/tasks" },
-  { id: "m-data", title: "Gather Task 1 longitudinal data", why: "Needs several dated data points within five years.", task: "t1", weeksBefore: 19, dependency: true, href: "/evidence" },
+  { id: "m-data", title: "Gather Task 1 longitudinal data", why: "Needs several dated data points (ETS now limits data to the last five years).", task: "t1", weeksBefore: 19, dependency: true, href: "/evidence" },
   { id: "m-team", title: "Recruit your Task 3 collaborative team", why: "Colleagues' schedules take time to line up.", task: "t3", weeksBefore: 18, dependency: true, href: "/tasks#t3" },
   { id: "m-participants", title: "Select three Task 2 participants", why: "They need different experience levels and must agree to be observed.", task: "t2", weeksBefore: 18, dependency: true, href: "/tasks#t2" },
   { id: "m-permissions", title: "Collect signed permission forms", why: "Required before recording video and before using anyone's work.", weeksBefore: 17, dependency: true, href: "/evidence" },

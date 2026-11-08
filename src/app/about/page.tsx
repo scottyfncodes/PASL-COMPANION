@@ -93,8 +93,14 @@ export default function AboutPage() {
       <Card>
         <h2 className="font-serif text-xl font-semibold">Sources</h2>
         <p className="mt-2 text-ink-soft">
-          Official requirements cite the{" "}
-          <a href={HANDBOOK.url} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">{HANDBOOK.title}</a> ({HANDBOOK.edition}). Page numbers are the handbook&rsquo;s printed pages. If ETS updates the handbook, the official version wins.
+          Official requirements cite your copy of the {HANDBOOK.title} ({HANDBOOK.edition}). &ldquo;Handbook p.&rdquo; numbers are that edition&rsquo;s printed pages.
+        </p>
+        <p className="mt-3 text-ink-soft">
+          ETS has since published a{" "}
+          <a href={HANDBOOK.newerUrl} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">{HANDBOOK.newerEdition} edition</a>.
+          The task requirements are the same, but it adds three stricter rules, which this app marks as &ldquo;newer ETS rule&rdquo;:
+          data no older than five years, at least two participants in each video segment, and at least one colleague in the 10-minute reflection.
+          Check which edition applies to your submission window. If they differ, the official ETS version wins.
         </p>
         <p className="mt-3 font-medium">Get these separately from the <a href={HANDBOOK.website} target="_blank" rel="noopener noreferrer" className="text-sage-700 underline underline-offset-2">ETS PASL website</a>:</p>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-ink-soft">

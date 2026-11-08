@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { HANDBOOK, TASKS } from "@/lib/pasl";
+import { HANDBOOK, TASKS, parseRef } from "@/lib/pasl";
 import { actionQueue, daysBetween, firstSteps, formatDate, progress, taskProgress, todayISO, type Action } from "@/lib/plan";
 import { useStore } from "@/lib/store";
 import { Card, CheckRow, KindBadge, ProgressBar } from "@/components/ui";
@@ -72,7 +72,7 @@ export default function Today() {
               {next.kind === "official" ? "Required by ETS" : "Suggested"}
             </span>
             <span className="text-sage-100">{next.label}</span>
-            {next.page && <span className="text-sage-100">· Handbook p. {next.page}</span>}
+            {next.page && <span className="text-sage-100">· {parseRef(next.page).label}</span>}
           </div>
           {next.due && <p className="mt-2 text-sm text-sage-100">{dueText(next.due)}</p>}
           <div className="mt-6 flex flex-wrap gap-3">

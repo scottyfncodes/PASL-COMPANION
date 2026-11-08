@@ -85,7 +85,7 @@ export default function Onboarding() {
               </p>
               <ul className="mt-8 space-y-3 text-[15px] text-ink-soft">
                 <li className="flex gap-3"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500" />It won&rsquo;t write, score or submit your responses. Your work stays yours.</li>
-                <li className="flex gap-3"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500" />Independent tool, not affiliated with ETS. Requirements cite the July 2026 handbook.</li>
+                <li className="flex gap-3"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500" />Independent tool, not affiliated with ETS. Requirements cite the July 2025 handbook.</li>
                 <li className="flex gap-3"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sage-500" />Progress is saved only in this browser on this device. Use a backup file to move it.</li>
               </ul>
             </>

@@ -195,7 +195,7 @@ export default function TasksPage() {
         ))}
       </div>
       <p className="mt-8 text-sm text-ink-faint">
-        Scores come from ETS raters using the official rubrics (<PageRef page="29" />). This app doesn&rsquo;t score your work, and completing checklists doesn&rsquo;t guarantee a passing score.
+        Scores come from ETS raters using the official rubrics (<PageRef page="30" />). This app doesn&rsquo;t score your work, and completing checklists doesn&rsquo;t guarantee a passing score.
       </p>
     </div>
   );
