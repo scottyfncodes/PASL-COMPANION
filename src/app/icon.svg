@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="392" height="392" viewBox="60 60 392 392">
+  <title>PASL Companion</title>
+  <circle cx="256" cy="256" r="196" fill="#e2ebdf"/>
+  <circle cx="256" cy="256" r="158" fill="#6e8b6a"/>
+  <polyline points="186,263 231,308 326,213" fill="none" stroke="#ffffff" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
